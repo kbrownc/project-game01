@@ -1,0 +1,59 @@
+table {
+	width: 400px;
+	height: 200px;
+	table-layout: fixed;
+}
+th {
+	text-align: left;
+}
+
+table, th, h4, h5 {
+	text-align: center;
+}
+h4, h5 {
+	margin: 4px;
+}
+
+table, th, td {
+	border: 1px solid #000;
+	border-collapse: collapse;
+	height:5px;
+	width:35px;
+}
+th, td {
+	padding: 5px;
+}
+tr:nth-child(even) {
+	background-color: green;
+}
+tr:nth-child(odd) {
+	background-color: yellow;
+}
+#cellNot {
+	visibility: hidden;
+}
+#cellNot1 {
+	visibility: visible;
+}
+#cellNot2 {
+	visibility: visible;
+}
+#cellNot3 {
+	visibility: visible;
+}
+#cellNot1a {
+	visibility: hidden;
+}
+#cellNot2a {
+	visibility: hidden;
+}
+#cellNot3a {
+	visibility: hidden;
+}
+#rollNo {
+	visibility: visible;
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
