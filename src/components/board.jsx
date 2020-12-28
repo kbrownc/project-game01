@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 class Board extends Component {
 	render() {
 	  return ( 
-	  	<div>
-	  	<table class="center">
+	  	<table className="center">
+	  	<tbody>
 			<tr><th>Start</th><th id="cellNot"></th><th id="cellNot"></th><th>Roll</th>
 				<th id="cellNot"></th><th id="cellNot"></th><th>End</th></tr>
 			<tr><td></td><td id="cellNot">1</td><td id="cellNot"></td>
@@ -37,8 +37,8 @@ class Board extends Component {
 			<tr><td></td><td id="cellNot">1</td><td id="cellNot2"></td>
 				<td id="cellNot"></td><td id="cellNot2"></td><td id="cellNot"></td><td></td></tr>
 			<tr><td>*</td><td></td><td></td><td id="cellNot2a">9</td><td></td><td></td><td>*</td></tr>
+		</tbody>
 		</table>
-		</div>
 	  );
 	}
 }
