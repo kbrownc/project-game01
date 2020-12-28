@@ -1,12 +1,12 @@
 import './App.css';
 import './game01.css';
+import Nav from './components/nav';
+import Board from './components/board';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-      <p>Test sentence</p>
-      </header>
+  	<div className="App">
+      <Nav />
     </div>
   );
 }
