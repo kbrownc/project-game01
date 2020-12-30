@@ -8,9 +8,9 @@ import Board from './components/board';
 function App() {
   return (
   	<React.Fragment>
-  	   <div className="Nav"><Nav /></div>
-        <div className="Roll"><Roll /></div> 
-        <div className="Board"><Board /></div>
+ 	 	<div className="Nav"><Nav /></div>
+		<div className="Roll"><Roll /></div> 
+        <div className="Board"><Board /></div> 
     </React.Fragment>
   );
 }

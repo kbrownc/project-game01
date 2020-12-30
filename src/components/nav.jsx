@@ -6,8 +6,9 @@ const Nav = () => {
 		<div>
 		<table className="center">
 		<tbody>
-			<tr><td>Start</td><td id="cellNot"></td><td id="cellNot"></td><td id="cellNot"></td>
-				<td id="cellNot"></td><td>Score</td><td>0</td></tr>
+			<tr><td>Start</td><td className="cellNot"></td><td className="cellNot"></td>
+				<td className="cellNot"></td><td className="cellNot">
+				</td><td className="score">Score</td><td id="scoreNo" className="score">0</td></tr>
 		</tbody>
 		</table>
 		</div>

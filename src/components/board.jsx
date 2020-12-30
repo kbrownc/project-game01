@@ -5,38 +5,38 @@ class Board extends Component {
 	  return ( 
 	  	<table className="center">
 	  	<tbody>
-			<tr><th>Start</th><th id="cellNot"></th><th id="cellNot"></th><th>Roll</th>
-				<th id="cellNot"></th><th id="cellNot"></th><th>End</th></tr>
-			<tr><td></td><td id="cellNot">1</td><td id="cellNot"></td>
-				<td id="rollNo">0</td><td id="cellNot"></td><td id="cellNot"></td><td></td></tr>
-			<tr><td></td><td id="cellNot">1</td><td id="cellNot"></td>
-				<td id="cellNot">4</td><td id="cellNot"></td><td id="cellNot"></td><td></td></tr>
-			<tr><td></td><td id="cellNot3">1</td><td id="cellNot3"></td>
-				<td id="cellNot3">4</td><td id="cellNot"></td><td id="cellNot"></td><td></td></tr>
-			<tr><td id="cellNot3a">9</td><td id="cellNot">1</td><td id="cellNot"></td>
-				<td id="cellNot3">4</td><td id="cellNot"></td><td id="cellNot"></td><td></td></tr>
-			<tr><td></td><td id="cellNot3">1</td><td id="cellNot3"></td>
-				<td id="cellNot3">4</td><td id="cellNot"></td><td id="cellNot"></td><td></td></tr>
-			<tr><td></td><td id="cellNot">1</td><td id="cellNot"></td>
-				<td id="cellNot">4</td><td id="cellNot"></td><td id="cellNot"></td><td></td></tr>
-			<tr><td></td><td id="cellNot">1</td><td id="cellNot"></td>
-				<td id="cellNot1">4</td><td id="cellNot1">1</td><td id="cellNot1">1</td><td></td></tr>
-			<tr><td></td><td id="cellNot">1</td><td id="cellNot"></td>
-				<td id="cellNot1">4</td><td id="cellNot"></td><td id="cellNot">
-				</td><td id="cellNot1a">9</td></tr>
-			<tr><td></td><td id="cellNot">1</td><td id="cellNot"></td>
-				<td id="cellNot1">4</td><td id="cellNot1"></td><td id="cellNot1"></td><td></td></tr>
-			<tr><td></td><td id="cellNot">1</td><td id="cellNot"></td>
-				<td id="cellNot">4</td><td id="cellNot"></td><td id="cellNot"></td><td></td></tr>
-			<tr><td></td><td id="cellNot">1</td><td id="cellNot"></td>
-				<td id="cellNot">4</td><td id="cellNot"></td><td id="cellNot"></td><td></td></tr>
-			<tr><td></td><td id="cellNot">1</td><td id="cellNot2"></td>
-				<td id="cellNot2">4</td><td id="cellNot2"></td><td id="cellNot"></td><td></td></tr>
-			<tr><td></td><td id="cellNot">1</td><td id="cellNot2"></td>
-				<td id="cellNot"></td><td id="cellNot2"></td><td id="cellNot"></td><td></td></tr>
-			<tr><td></td><td id="cellNot">1</td><td id="cellNot2"></td>
-				<td id="cellNot"></td><td id="cellNot2"></td><td id="cellNot"></td><td></td></tr>
-			<tr><td>*</td><td></td><td></td><td id="cellNot2a">9</td><td></td><td></td><td>*</td></tr>
+			<tr><th>Start</th><th className="cellNot"></th><th className="cellNot"></th><th>Roll</th>
+				<th className="cellNot"></th><th className="cellNot"></th><th>End</th></tr>
+			<tr><td></td><td className="cellNot">1</td><td className="cellNot"></td>
+				<td id="rollNo">0</td><td className="cellNot"></td><td className="cellNot"></td><td></td></tr>
+			<tr><td></td><td className="cellNot">1</td><td className="cellNot"></td>
+				<td className="cellNot">4</td><td className="cellNot"></td><td className="cellNot"></td><td></td></tr>
+			<tr><td></td><td className="cellNot3">1</td><td className="cellNot3"></td>
+				<td className="cellNot3">4</td><td className="cellNot"></td><td className="cellNot"></td><td></td></tr>
+			<tr><td className="cellNot3a">9</td><td className="cellNot">1</td><td className="cellNot"></td>
+				<td className="cellNot3">4</td><td className="cellNot"></td><td className="cellNot"></td><td></td></tr>
+			<tr><td></td><td className="cellNot3">1</td><td className="cellNot3"></td>
+				<td className="cellNot3">4</td><td className="cellNot"></td><td className="cellNot"></td><td></td></tr>
+			<tr><td></td><td className="cellNot">1</td><td className="cellNot"></td>
+				<td className="cellNot">4</td><td className="cellNot"></td><td className="cellNot"></td><td></td></tr>
+			<tr><td></td><td className="cellNot">1</td><td className="cellNot"></td>
+				<td className="cellNot1">4</td><td className="cellNot1">1</td><td className="cellNot1">1</td><td></td></tr>
+			<tr><td></td><td className="cellNot">1</td><td className="cellNot"></td>
+				<td className="cellNot1">4</td><td className="cellNot"></td><td className="cellNot">
+				</td><td className="cellNot1a">9</td></tr>
+			<tr><td></td><td className="cellNot">1</td><td className="cellNot"></td>
+				<td className="cellNot1">4</td><td className="cellNot1"></td><td className="cellNot1"></td><td></td></tr>
+			<tr><td></td><td className="cellNot">1</td><td className="cellNot"></td>
+				<td className="cellNot">4</td><td className="cellNot"></td><td className="cellNot"></td><td></td></tr>
+			<tr><td></td><td className="cellNot">1</td><td className="cellNot"></td>
+				<td className="cellNot">4</td><td className="cellNot"></td><td className="cellNot"></td><td></td></tr>
+			<tr><td></td><td className="cellNot">1</td><td className="cellNot2"></td>
+				<td className="cellNot2">4</td><td className="cellNot2"></td><td className="cellNot"></td><td></td></tr>
+			<tr><td></td><td className="cellNot">1</td><td className="cellNot2"></td>
+				<td className="cellNot"></td><td className="cellNot2"></td><td className="cellNot"></td><td></td></tr>
+			<tr><td></td><td className="cellNot">1</td><td className="cellNot2"></td>
+				<td className="cellNot"></td><td className="cellNot2"></td><td className="cellNot"></td><td></td></tr>
+			<tr><td>*</td><td></td><td></td><td className="cellNot2a">9</td><td></td><td></td><td>*</td></tr>
 		</tbody>
 		</table>
 	  );

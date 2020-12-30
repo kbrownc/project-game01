@@ -29,29 +29,35 @@ tr:nth-child(even) {
 tr:nth-child(odd) {
 	background-color: yellow;
 }
-#cellNot {
+.cellNot {
 	visibility: hidden;
 }
-#cellNot1 {
+.cellNot1 {
 	visibility: visible;
 }
-#cellNot2 {
+.cellNot2 {
 	visibility: visible;
 }
-#cellNot3 {
+.cellNot3 {
 	visibility: visible;
 }
-#cellNot1a {
+.cellNot1a {
 	visibility: hidden;
 }
-#cellNot2a {
+.cellNot2a {
 	visibility: hidden;
 }
-#cellNot3a {
+.cellNot3a {
 	visibility: hidden;
 }
 #rollNo {
 	visibility: visible;
+}
+.score {
+	background-color: orange;
+}
+#scoreNo {
+	background-color: blue;
 }
 .center {
   margin-left: auto;
