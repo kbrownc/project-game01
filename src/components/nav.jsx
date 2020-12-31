@@ -13,7 +13,7 @@ const Nav = () => {
 		</table>
 		</div>
 		<div>
-			<h4><b>Message Line</b></h4>
+			<h4>Message Line</h4>
 			<h5>Optional Message Line</h5>
 		</div>
 		</div>

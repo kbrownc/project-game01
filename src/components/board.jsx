@@ -6,10 +6,10 @@ class Board extends Component {
 	  	<table className="center">
 	  	<tbody>
 			<tr><th>Start</th><th className="cellNot"></th><th className="cellNot"></th>
-				<th>Roll</th>
+				<th onClick={() => this.getRandonNumber(1,6)}>Roll</th> 
 				<th className="cellNot"></th><th className="cellNot"></th><th>End</th></tr>
 			<tr><td></td><td className="cellNot">1</td><td className="cellNot"></td>
-				<td id="rollNo">{this.getRandonNumber(1,6)}</td><td className="cellNot"></td><td className="cellNot"></td><td></td></tr>
+				<td id="rollNo">{this.getRandom}</td><td className="cellNot"></td><td className="cellNot"></td><td></td></tr>
 			<tr><td></td><td className="cellNot">1</td><td className="cellNot"></td>
 				<td className="cellNot">4</td><td className="cellNot"></td><td className="cellNot"></td><td></td></tr>
 			<tr><td></td><td className="cellNot3">1</td><td className="cellNot3"></td>
