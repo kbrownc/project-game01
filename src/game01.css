@@ -21,7 +21,7 @@ table, th, td {
 	width:35px;
 }
 th, td {
-	padding: 5px;
+	padding: 1px;
 }
 tr:nth-child(even) {
 	background-color: green;
@@ -41,6 +41,9 @@ tr:nth-child(odd) {
 .cellNot3 {
 	visibility: visible;
 }
+.cellNot4 {
+	background-color: orange;
+}
 .cellNot1a {
 	visibility: hidden;
 }
@@ -52,12 +55,13 @@ tr:nth-child(odd) {
 }
 #rollNo {
 	visibility: visible;
+	background-color: orange;
 }
 .score {
 	background-color: orange;
 }
 #scoreNo {
-	background-color: blue;
+	background-color: orange;
 }
 .center {
   margin-left: auto;
