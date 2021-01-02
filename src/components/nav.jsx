@@ -13,8 +13,8 @@ const Nav = () => {
 		</table>
 		</div>
 		<div>
-			<h4>Message Line</h4>
-			<h5>Optional Message Line</h5>
+			<h4 className="message">Message Line</h4>
+			<h5 className="optMessage">Optional Message Line</h5>
 		</div>
 		</div>
 		);
