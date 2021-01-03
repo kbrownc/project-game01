@@ -1,40 +1,42 @@
 // Add to App (Child to parent)
+// Parent
 class App extends React.Component {
-    myCallback = (messageGameOver) => { 
-        code command to add message into HTML
+    // setup state so that this field can be used through the component
+    constructor(props) {
+        super(props);
+        this.state = {
+            mainMessage: null
+        };    
+    },
+
+    myCallback = (dataMainMessage) => { 
+        this.setState({mainMessage: dataMainMessage});
+    },
+    otherFtn = () => { 
+        code command to add mainMessage into HTML  - you now have this.state.mainMessage
     },
     render() {
         return (
             <div>
-                 <ToDoItem callbackFromParent={this.myCallback}/>
+                 <Board callbackFromParent={this.myCallback}/>
             </div>
         );
     }
 }
 
-// And add as a prop in App
-
-
-// Add to Board
+// Child
 class Board extends React.Component{
-    someFn = () => {
-        let listInfo = "xxxxxxx";
-        this.props.callbackFromParent(listInfo);
+    isGameOver = () => {
+        let mainMessage = " ";
+        if (totalCount > 54) {
+            mainMessage = "Game Over";
+        }
+        else {
+            mainMessage = "Roll Again";
+        }
+        this.props.callbackFromParent(mainMessage);
     },
     render() {
         [...]
     }
 };
-
-// Add to App (Parent to Child)
-class App extends React.Component {
-    render() {
-        let listName = "xxxxxxx";             
-        return (
-            <div>
-                 <InputBar/>
-                 <ToDoList listNameFromParent={listName}/>
-            </div>
-        );
-    }
-}

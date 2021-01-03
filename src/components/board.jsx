@@ -13,6 +13,23 @@ class Board extends Component {
 		})
 	}
 
+// calculatr which square on the board should be marked as the current location
+	calcSpotOnBoard() {
+		if (switch1 = 2 && spotOnBoard = 9) {
+			squareToMark = document.querySelector(".square9a");
+		}
+		else if (switch2 = 2 && spotOnBoard = 25) {
+			squareToMark = document.querySelector(".square25a");
+		}
+		else if (switch3 = 2 && spotOnBoard = 45) {
+			squareToMark = document.querySelector(".square45a");
+		}
+		else {
+			squareToMark = document.querySelector(".square"+ spotOnBoard);
+		}
+		squareToMark.style.background-color = red;
+	}
+
 	render() {
 	  return ( 
 	  	<table className="center">
