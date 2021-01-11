@@ -5,7 +5,7 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            mainMessage: null
+            message: null
         };    
     },
 
@@ -13,7 +13,7 @@ class App extends React.Component {
         this.setState({mainMessage: dataMainMessage});
     },
     otherFtn = () => { 
-        code command to add mainMessage into HTML  - you now have this.state.mainMessage
+        code command to add mainMessage into HTML  - you now have this.state.message
     },
     render() {
         return (
@@ -26,15 +26,7 @@ class App extends React.Component {
 
 // Child
 class Board extends React.Component{
-    isGameOver = () => {
-        let mainMessage = " ";
-        if (totalCount > 54) {
-            mainMessage = "Game Over";
-        }
-        else {
-            mainMessage = "Roll Again";
-        }
-        this.props.callbackFromParent(mainMessage);
+    this.props.callbackFromParent(message);
     },
     render() {
         [...]

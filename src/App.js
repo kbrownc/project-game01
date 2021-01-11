@@ -5,10 +5,19 @@ import Nav from './components/nav';
 import Board from './components/board';
 
 function App() {
+	constructor(props) {
+        super(props);
+        this.state = {
+            message: null
+        };    
+      myCallback = (dataMainMessage) => { 
+        this.setState({message: message});
+    },
   return (
   	<React.Fragment>
- 	 	<div className="Nav"><Nav /></div>
-        <div className="Board"><Board /></div> 
+ 	 	<div className="Nav"><Nav message={message} 
+ 	 		optMessage={optMessage} score={score}/></div>
+        <div className="Board"><Board playBtn={playBtn} /></div> 
     </React.Fragment>
   );
 }

@@ -9,15 +9,17 @@ class Board extends Component {
 	}
 	// Impacts if play button was pressed
 	playBtn() {
-		switch1 = 0;
-		switch2 = 0;
-		switch3 = 0;
-		score = 0;
-		message = "Role Again";
-		let getRollButton = document.querySelector(".cellNot4");
-		getRollButton.style.visibility = "visible";
-		let getRollNo = document.querySelector(".rollNo");
-		getRollNo.style.visibility = "visible";
+		if (this.props.playBtn = true) {
+			switch1 = 0;
+			switch2 = 0;
+			switch3 = 0;
+			score = 0;
+			message = "Role Again";
+			let getRollButton = document.querySelector(".cellNot4");
+			getRollButton.style.visibility = "visible";
+			let getRollNo = document.querySelector(".rollNo");
+			getRollNo.style.visibility = "visible";
+		}
 	}
 
 	// this will roll dice, calc progress on board and update your location
@@ -26,6 +28,7 @@ class Board extends Component {
 		calcSpotOnboard();
 		updateSpotOnBoard();
 		score = score + 1;
+		this.props.callbackFromParent(score);
 	}
 
 	// calc progress on board
@@ -67,6 +70,7 @@ class Board extends Component {
 
 			message = "Role Again";
 		}
+		this.props.callbackFromParent(message);
 
 		// Check for special squares
 		if (spotOnBoard = 5) {
@@ -100,6 +104,7 @@ class Board extends Component {
 			optMessage = "Sorry....you lose a roll";
 			score = score + 1;
 		}
+		this.props.callbackFromParent(optMessage);
 	}	
 
 	// update square on the board should be marked as the current location
