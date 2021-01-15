@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Nav = (props) => {
-	playBtnHit() {
-		playBtn = true;
+class Nav extends Component {
+	constructor(props) {
+		super(props)
+		this.state = {
+			score: 0
+			message: null
+		}
 	}
-	return (
-		<div>
+	render() {
+	  return ( 
+  		<div>
 			<div>
 				<table className="center">
 				<tbody>
-				<tr><td className = "cellNot4" onClick={() => playBtnHit()}>Play</td>
+				<tr><td className = "cellNot4" onClick={() => this.props.playBtnHit()}>Play</td>
 					<td className="cellNot"></td><td className="cellNot"></td>
 					<td className="cellNot"></td><td className="cellNot">
 					</td><td className="score">Score</td>
@@ -22,7 +27,8 @@ const Nav = (props) => {
 				<h5 className="optMessage">{this.props.optMessage}</h5>
 			</div>
 		</div>
-		);
-};
+  		);
+	}
+}
 
 export default Nav;
