@@ -1,13 +1,6 @@
 import React, { Component } from 'react';
 
-class Nav extends Component {
-	constructor(props) {
-		super(props)
-		this.state = {
-			score: 0
-			message: null
-		}
-	}
+class Nav extends Component {	
 	render() {
 	  return ( 
   		<div>
