@@ -9,7 +9,7 @@ class Board extends Component {
 				<th className ="cellNot4" onClick={() => this.rollDice()}>Roll</th> 
 				<th className="cellNot"></th><th className="cellNot"></th><th id="s1">Start</th></tr>
 			<tr><td id="s54"></td><td className="cellNot">1</td><td className="cellNot"></td>
-				<td id="rollNo">{this.state.rollNum}</td><td className="cellNot"></td>
+				<td id="rollNo">"this.state.rollNum"</td><td className="cellNot"></td>
 				<td className="cellNot"></td><td id="s2"></td></tr>
 			<tr><td id="s53"></td><td className="cellNot">1</td><td className="cellNot"></td>
 				<td className="cellNot">4</td><td className="cellNot"></td><td className="cellNot">
@@ -53,7 +53,7 @@ class Board extends Component {
 				<td className="cellNot"></td><td className="cellNot2" id="s26"></td>
 				<td className="cellNot"></td><td id="s20"></td></tr>
 			<tr><td id="s35"></td><td className="cellNot">1</td><td className="cellNot2" id="s31"></td>
-				<td className="cellNot"></td><td className="cellNot2 id="s25a></td>
+				<td className="cellNot"></td><td className="cellNot2" id="s25a"></td>
 				<td className="cellNot"></td><td id="s21"></td></tr>
 			<tr><td id="s34"></td><td id="s33"></td><td id="s32"></td>
 				<td className="cellNot2a" id="s25">9</td><td id="s24"></td>
