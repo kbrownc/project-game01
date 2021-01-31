@@ -6,10 +6,10 @@ class Board extends Component {
 	  	<table className="center">
 	  	<tbody>
 			<tr><th id="s55">End</th><th className="cellNot"></th><th className="cellNot"></th>
-				<th className ="cellNot4" onClick={() => this.rollDice()}>Roll</th> 
+				<th className ="cellNot4" onClick={this.props.rollDice}>Roll</th> 
 				<th className="cellNot"></th><th className="cellNot"></th><th id="s1">Start</th></tr>
 			<tr><td id="s54"></td><td className="cellNot">1</td><td className="cellNot"></td>
-				<td id="rollNo">"this.state.rollNum"</td><td className="cellNot"></td>
+				<td id="rollNo">{this.props.rollNum}</td><td className="cellNot"></td>
 				<td className="cellNot"></td><td id="s2"></td></tr>
 			<tr><td id="s53"></td><td className="cellNot">1</td><td className="cellNot"></td>
 				<td className="cellNot">4</td><td className="cellNot"></td><td className="cellNot">

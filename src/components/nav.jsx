@@ -7,7 +7,7 @@ class Nav extends Component {
 			<div>
 				<table className="center">
 				<tbody>
-				<tr><td className = "cellNot4" onClick={() => this.props.playBtnHit()}>Play</td>
+				<tr><td className = "cellPlay" onClick={() => this.props.playBtnHit()}>Play</td>
 					<td className="cellNot"></td><td className="cellNot"></td>
 					<td className="cellNot"></td><td className="cellNot">
 					</td><td className="score">Score</td>

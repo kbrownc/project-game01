@@ -33,25 +33,28 @@ tr:nth-child(odd) {
 	visibility: hidden;
 }
 .cellNot1 {
-	visibility: visible;
+	visibility: hidden;
 }
 .cellNot2 {
-	visibility: visible;
+	visibility: hidden;
 }
 .cellNot3 {
-	visibility: visible;
+	visibility: hidden;
+}
+.cellPlay {
+	background-color: orange;
 }
 .cellNot4 {
 	background-color: orange;
 }
 .cellNot1a {
-	visibility: hidden;
+	visibility: visible;
 }
 .cellNot2a {
-	visibility: hidden;
+	visibility: visible;
 }
 .cellNot3a {
-	visibility: hidden;
+	visibility: visible;
 }
 #rollNo {
 	visibility: visible;
