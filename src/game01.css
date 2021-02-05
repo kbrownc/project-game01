@@ -17,14 +17,14 @@ h4, h5 {
 table, th, td {
 	border: 1px solid #000;
 	border-collapse: collapse;
-	height:5px;
+	height:20px;
 	width:35px;
 }
 th, td {
 	padding: 1px;
 }
 tr:nth-child(even) {
-	background-color: green;
+	background-color: yellow;
 }
 tr:nth-child(odd) {
 	background-color: yellow;

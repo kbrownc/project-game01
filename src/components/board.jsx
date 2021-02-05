@@ -19,7 +19,7 @@ class Board extends Component {
 				<td className="cellNot3" id="s49"></td><td className="cellNot">4</td>
 				<td className="cellNot">
 				</td><td id="s4"></td></tr>
-			<tr><td className="cellNot3a" id="s45">9</td><td className="cellNot">1</td>
+			<tr><td className="cellNot3a" id="s45"></td><td className="cellNot">1</td>
 				<td className="cellNot"></td>
 				<td className="cellNot3" id="s48"></td><td className="cellNot">4</td>
 				<td className="cellNot"></td><td id="s5"></td></tr>
@@ -36,7 +36,7 @@ class Board extends Component {
 			<tr><td id="s41"></td><td className="cellNot">1</td><td className="cellNot"></td>
 				<td className="cellNot1" id="s12"></td><td className="cellNot"></td>
 				<td className="cellNot">
-				</td><td className="cellNot1a" id="s9">9</td></tr>
+				</td><td className="cellNot1a" id="s9"></td></tr>
 			<tr><td id="s40"></td><td className="cellNot">1</td><td className="cellNot"></td>
 				<td className="cellNot1" id="s13"></td><td className="cellNot1" id="s14"></td>
 				<td className="cellNot1" id="s15"></td><td id="s16"></td></tr>
@@ -56,7 +56,7 @@ class Board extends Component {
 				<td className="cellNot"></td><td className="cellNot2" id="s25a"></td>
 				<td className="cellNot"></td><td id="s21"></td></tr>
 			<tr><td id="s34"></td><td id="s33"></td><td id="s32"></td>
-				<td className="cellNot2a" id="s25">9</td><td id="s24"></td>
+				<td className="cellNot2a" id="s25"></td><td id="s24"></td>
 				<td id="s23"></td><td id="s22"></td></tr>
 		</tbody>
 		</table>

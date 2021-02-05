@@ -14,12 +14,13 @@ let spotOnBoard = 0;
 let spotOnBoardOld = 0;
 let squareToMark = "";
 let squareToMarkOld = "";
+let newScore = 0;
 
 class App extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			score: 5 ,
+			score: 0 ,
 			rollNum: 0
 		}
 		this.rollDice = this.rollDice.bind(this);
@@ -30,33 +31,88 @@ class App extends Component {
 		switch1 = 0;
 		switch2 = 0;
 		switch3 = 0;
+		if (spotOnBoard > 0) {
+			squareToMark = document.getElementById("s" + spotOnBoard.toString());
+			squareToMark.style.backgroundColor = "yellow";
+		};
 		spotOnBoard = 0;
+	//  Is this 'if' still required??????????????????????
+		if (spotOnBoardOld > 0) {
+			squareToMarkOld = document.getElementById("s" + spotOnBoardOld.toString());
+			squareToMarkOld.style.backgroundColor = "yellow";
+		};
+	// If spot 9a 25a 45a was landed on.....square will need to be reset yellow
+		squareToMark = document.querySelector("#s9a");
+		squareToMarkOld.style.backgroundColor = "yellow";;
+		squareToMark = document.querySelector("#s25a");
+		squareToMarkOld.style.backgroundColor = "yellow";;
+		squareToMark = document.querySelector("#s45a");
+		squareToMarkOld.style.backgroundColor = "yellow";;
+
 		spotOnBoardOld = 0;
 		this.setState({score: 0});
+		this.setState({rollNum: 0});
 		message = "Roll again";
 		optMessage = "Kim";
 		let getRollButton = document.querySelector(".cellNot4");
 		getRollButton.style.visibility = "visible";
 		let getRollNo = document.querySelector("#rollNo");
 		getRollNo.style.visibility = "visible";
+		squareToMarkOld = document.getElementById("s55");
+		squareToMarkOld.style.backgroundColor = "yellow";
+		// Reset detour 1
+		let extraSquares1 = document.querySelectorAll(".cellNot1");
+		let i;
+		for (i = 0; i < extraSquares1.length; i++) {
+  		extraSquares1[i].style.visibility = "hidden";
+		}
+		let extraSquares1a = document.querySelector(".cellNot1a");
+		extraSquares1a.style.visibility = "visible";
+		// Reset detour 2
+		let extraSquares2 = document.querySelectorAll(".cellNot2");
+		for (i = 0; i < extraSquares2.length; i++) {
+  		extraSquares2[i].style.visibility = "hidden";
+		}
+		let extraSquares2a = document.querySelector(".cellNot2a");
+		extraSquares2a.style.visibility = "visible";
+		// Reset detour 3
+		let extraSquares3 = document.querySelectorAll(".cellNot3");
+		for (i = 0; i < extraSquares3.length; i++) {
+  		extraSquares3[i].style.visibility = "hidden";
+		}
+		let extraSquares3a = document.querySelector(".cellNot3a");
+		extraSquares3a.style.visibility = "visible";
+		
 	};
 
 	// this will roll dice, calc progress on board and update your location
 	rollDice = () => {
 		let getRandom = Math.floor((Math.random() * 6) + 1);
-		this.calcSpotOnBoard();
+		console.log("******* rollDice", getRandom);
+		this.calcSpotOnBoard(getRandom);
 		this.checkForEndOfGame();
 		this.checkforSpecialSquares();
 		this.updateSpotOnBoard();
-		this.setState((oldstate) => ({
+		console.log('setState rollNum score');
+		this.setState((oldState) => ({
 			rollNum: getRandom,
-			score: this.newScore + 1}))
+			score: newScore + 1}))
 	};
 
 	// calc progress on board
-	calcSpotOnBoard = () => {
+	calcSpotOnBoard = (getRandom) => {
+		console.log('spotOnBoard pre1',spotOnBoard);
+		console.log('spotOnBoardOld pre1',spotOnBoardOld);
 		spotOnBoardOld = spotOnBoard;
-		spotOnBoard = spotOnBoard + this.state.rollNum;
+		spotOnBoard = spotOnBoard + getRandom;
+	// Set previous square back to yellow
+	// Is if required??????????????????????????
+		if (spotOnBoardOld > 0) {
+			squareToMarkOld = document.getElementById("s" + spotOnBoardOld.toString());
+			squareToMarkOld.style.backgroundColor = "yellow";
+		};
+		console.log('spotOnBoard pre2',spotOnBoard);
+		console.log('spotOnBoardOld pre2',spotOnBoardOld);
 
 		if ((switch1 === 0) && (spotOnBoard > 8)) {
 			spotOnBoard = spotOnBoard + 6;
@@ -74,6 +130,8 @@ class App extends Component {
 		} else if ((switch3 === 0) && (spotOnBoard === 44)) {
 			switch3 = 2;
 		}
+		console.log('spotOnBoard post',spotOnBoard);
+		console.log('switches',switch1,switch2,switch3);
 	};
 
 	// Check for end of game
@@ -95,10 +153,11 @@ class App extends Component {
 
 	// Check for special squares
 	checkforSpecialSquares = () => {
-		this.newScore = this.state.score;
+		console.log('checkforSpecialSquares score newScore pre',this.state.score, newScore);
+		newScore = this.state.score;
 		if (spotOnBoard === 5) {
 			optMessage = "Sorry....you lose a roll";
-			this.newScore = this.newScore + 1;
+			newScore = newScore + 1;
 		} else if (spotOnBoard === 8) {
 			optMessage = "You have a longer journey";
 			let extraSquares1 = document.querySelectorAll(".cellNot1");
@@ -108,13 +167,13 @@ class App extends Component {
 			}
 			let extraSquares1a = document.querySelector(".cellNot1a");
 			extraSquares1a.style.visibility = "hidden";
-			this.newScore = this.newScore + 1;
+			newScore = newScore + 1;
 		} else if (spotOnBoard === 20) {
 			optMessage = "Sorry....you lose a roll";
-			this.newScore = this.newScore + 1;
+			newScore = newScore + 1;
 		} else if (spotOnBoard === 22) {
 			optMessage = "Wonderful....you get an extra roll";
-			this.newScore = this.newScore - 1;
+			newScore = newScore - 1;
 		} else if (spotOnBoard === 24) {
 			optMessage = "You have a longer journey";
 			let extraSquares2 = document.querySelectorAll(".cellNot2");
@@ -124,16 +183,16 @@ class App extends Component {
 			}
 			let extraSquares2a = document.querySelector(".cellNot2a");
 			extraSquares2a.style.visibility = "hidden";
-			this.newScore = this.newScore + 1;
+			newScore = newScore + 1;
 		} else if (spotOnBoard === 25) {
 			optMessage = "Sorry....you lose a roll";
-			this.newScore = this.newScore + 1;
+			newScore = newScore + 1;
 		} else if (spotOnBoard === 34) {
 			optMessage = "Wonderful....you get an extra roll";
-			this.newScore = this.newScore - 1;
+			newScore = newScore - 1;
 		} else if (spotOnBoard === 38) {
 			optMessage = "Sorry....you lose a roll";
-			this.newScore = this.newScore + 1;
+			newScore = newScore + 1;
 		} else if (spotOnBoard === 44) {
 			optMessage = "You have a longer journey";
 			let extraSquares3 = document.querySelectorAll(".cellNot3");
@@ -143,16 +202,21 @@ class App extends Component {
 			}
 			let extraSquares3a = document.querySelector(".cellNot3a");
 			extraSquares3a.style.visibility = "hidden";
-			this.newScore = this.newScore + 1;
+			newScore = newScore + 1;
 		} else if (spotOnBoard === 45) {
 			optMessage = "Sorry....you lose a roll";
-			this.newScore = this.newScore + 1;
+			newScore = newScore + 1;
 		}
+		console.log('checkforSpecialSquares score newScore post',this.state.score, newScore);
 	};	
 
 	// update square on the board as the current location
 	updateSpotOnBoard = () => {
-		if (spotOnBoard === 0) spotOnBoard = 4;
+		if (spotOnBoard === 0) {
+			spotOnBoard = 1;
+			console.log("update spotOnBoard error", spotOnBoard);
+		}
+		console.log("update spotOnBoard pre", spotOnBoard);
 		if ((switch1 === 2) && (spotOnBoard === 9)) {
 			squareToMark = document.querySelector("#s9a");
 		}
@@ -165,11 +229,8 @@ class App extends Component {
 		else {
 			squareToMark = document.getElementById("s" + spotOnBoard.toString());
 		}
-		if (spotOnBoardOld > 0) {
-			squareToMarkOld = document.getElementById("s" + spotOnBoardOld.toString());
-			squareToMarkOld.style.backgroundColor = "yellow";;
-		};
-		squareToMark.style.backgroundColor = "red";;
+		console.log("update spotOnBoard post", squareToMark);
+		squareToMark.style.backgroundColor = "red";
 		return squareToMark;
 	};
 
