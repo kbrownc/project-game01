@@ -11,7 +11,7 @@ import Board from './components/board';
 let switch1 = 0;
 let switch2 = 0;
 let switch3 = 0;
-let message = "Roll";
+let message = "Roll again";
 let optMessage = "Kim";
 let spotOnBoard = 0;
 let spotOnBoardOld = 0;
@@ -39,11 +39,11 @@ class App extends Component {
 			squareToMark.style.backgroundColor = "yellow";
 		};
 		spotOnBoard = 0;
-	//  Is this 'if' still required??????????????????????
 		if (spotOnBoardOld > 0) {
 			squareToMarkOld = document.getElementById("s" + spotOnBoardOld.toString());
 			squareToMarkOld.style.backgroundColor = "yellow";
 		};
+		spotOnBoardOld = 0;
 	// If spot 9a 25a 45a was landed on.....square will need to be reset yellow
 		squareToMark = document.querySelector("#s9a");
 		squareToMark.style.backgroundColor = "yellow";;
@@ -52,9 +52,9 @@ class App extends Component {
 		squareToMark = document.querySelector("#s45a");
 		squareToMark.style.backgroundColor = "yellow";;
 
-		spotOnBoardOld = 0;
-		this.setState({score: 0});
-		this.setState({rollNum: 0});
+		this.setState(
+			{rollNum: 0,
+			score: 0});
 		message = "Roll again";
 		optMessage = "Kim";
 		let getRollButton = document.querySelector(".cellNot4");
@@ -91,9 +91,6 @@ class App extends Component {
 	// this will roll dice, calc progress on board and update your location
 	rollDice = () => {
 		let getRandom = Math.floor((Math.random() * 6) + 1);
-	//	the following line is for testing purposes only
-	//	let getRandom = 6;
-		console.log("******* rollDice", getRandom);
 		this.calcSpotOnBoard(getRandom);
 		this.checkForEndOfGame();
 		this.checkforSpecialSquares();
@@ -108,7 +105,6 @@ class App extends Component {
 		spotOnBoardOld = spotOnBoard;
 		spotOnBoard = spotOnBoard + getRandom;
 	// Set previous square back to yellow
-	// Is if required??????????????????????????
 		if (spotOnBoardOld > 0) {
 			squareToMarkOld = document.getElementById("s" + spotOnBoardOld.toString());
 			squareToMarkOld.style.backgroundColor = "yellow";
@@ -125,8 +121,6 @@ class App extends Component {
 				squareToMarkOld.style.backgroundColor = "yellow";
 			} 
 		};
-		console.log('spotOnBoardOld pre',spotOnBoardOld);
-		console.log('spotOnBoard pre',spotOnBoard);
 
 		if ((switch1 === 0) && (spotOnBoard > 9)) {
 			spotOnBoard = spotOnBoard + 6;
@@ -144,8 +138,6 @@ class App extends Component {
 		} else if ((switch3 === 0) && (spotOnBoard === 44)) {
 			switch3 = 2;
 		}
-		console.log('spotOnBoard post',spotOnBoard);
-		console.log('switches',switch1,switch2,switch3);
 	};
 
 	// Check for end of game
@@ -167,7 +159,6 @@ class App extends Component {
 
 	// Check for special squares
 	checkforSpecialSquares = () => {
-		console.log('checkforSpecialSquares score newScore pre',this.state.score, newScore);
 		newScore = this.state.score;
 		optMessage = "-";
 		if (spotOnBoard === 5) {
@@ -219,16 +210,10 @@ class App extends Component {
 			optMessage = "Sorry....you lose a roll";
 			newScore = newScore + 1;
 		}
-		console.log('checkforSpecialSquares score newScore post',this.state.score, newScore);
 	};	
 
 	// update square on the board as the current location
 	updateSpotOnBoard = () => {
-		if (spotOnBoard === 0) {
-			spotOnBoard = 1;
-			console.log("update spotOnBoard error", spotOnBoard);
-		}
-		console.log("update spotOnBoard pre", spotOnBoard);
 		if ((switch1 === 2) && (spotOnBoard === 9)) {
 			squareToMark = document.querySelector("#s9a");
 		}
@@ -241,7 +226,6 @@ class App extends Component {
 		else {
 			squareToMark = document.getElementById("s" + spotOnBoard.toString());
 		}
-		console.log("update spotOnBoard post", squareToMark);
 		squareToMark.style.backgroundColor = "red";
 		return squareToMark;
 	};
