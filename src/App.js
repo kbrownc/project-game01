@@ -5,6 +5,9 @@ import Nav from './components/nav';
 import Board from './components/board';
 
 
+// switch = 0 means extra quares is not determined
+// switch = 1 means no extra quares
+// switch = 2 means extra quares
 let switch1 = 0;
 let switch2 = 0;
 let switch3 = 0;
@@ -87,8 +90,9 @@ class App extends Component {
 
 	// this will roll dice, calc progress on board and update your location
 	rollDice = () => {
-	//	let getRandom = Math.floor((Math.random() * 6) + 1);
-		let getRandom = 1;
+		let getRandom = Math.floor((Math.random() * 6) + 1);
+	//	the following line is for testing purposes only
+	//	let getRandom = 6;
 		console.log("******* rollDice", getRandom);
 		this.calcSpotOnBoard(getRandom);
 		this.checkForEndOfGame();
@@ -124,17 +128,17 @@ class App extends Component {
 		console.log('spotOnBoardOld pre',spotOnBoardOld);
 		console.log('spotOnBoard pre',spotOnBoard);
 
-		if ((switch1 === 0) && (spotOnBoard > 8)) {
+		if ((switch1 === 0) && (spotOnBoard > 9)) {
 			spotOnBoard = spotOnBoard + 6;
 			switch1 = 1;
 		} else if ((switch1 === 0) && (spotOnBoard === 8)) {
 			switch1 = 2;
-		} else if ((switch2 === 0) && (spotOnBoard > 24)) {
+		} else if ((switch2 === 0) && (spotOnBoard > 25)) {
 			spotOnBoard = spotOnBoard + 6;
 			switch2 = 1;
 		} else if ((switch2 === 0) && (spotOnBoard === 24)) {
 			switch2 = 2;
-		} else if ((switch3 === 0) && (spotOnBoard > 44)) {
+		} else if ((switch3 === 0) && (spotOnBoard > 45)) {
 			spotOnBoard = spotOnBoard + 6;
 			switch3 = 1;
 		} else if ((switch3 === 0) && (spotOnBoard === 44)) {
